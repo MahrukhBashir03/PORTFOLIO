@@ -3,7 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mahrukh Bashir - AI & Software Engineer</title>
+    <title>Mahrukh Bashir - Computer Science Graduate | AI & Software Engineer</title>
+    <meta name="description" content="Mahrukh Bashir is a Computer Science graduate from Lahore Garrison University specializing in AI, web development and database systems, with experience in software engineering, ERP and AI. Open to graduate roles.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
         * {
@@ -26,11 +30,20 @@
             --shadow-hover: 0 20px 40px rgba(0, 0, 0, 0.15);
         }
 
+        html {
+            scroll-padding-top: 72px;
+        }
+
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
             line-height: 1.6;
             color: var(--text-dark);
             overflow-x: hidden;
+        }
+
+        :focus-visible {
+            outline: 3px solid var(--accent-color);
+            outline-offset: 3px;
         }
 
         /* Navigation */
@@ -100,6 +113,16 @@
             width: 100%;
         }
 
+        .nav-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.4rem;
+            color: var(--text-dark);
+            cursor: pointer;
+            padding: 0.25rem 0.5rem;
+        }
+
         /* Hero Section */
         .hero {
             min-height: 100vh;
@@ -108,6 +131,7 @@
             background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
             position: relative;
             overflow: hidden;
+            padding-top: 5rem;
         }
 
         .hero::before {
@@ -138,26 +162,51 @@
             z-index: 2;
         }
 
+        .availability {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            background: rgba(255, 255, 255, 0.18);
+            border: 1px solid rgba(255, 255, 255, 0.35);
+            backdrop-filter: blur(6px);
+            color: white;
+            padding: 0.4rem 1rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+        }
+
+        .availability .dot {
+            width: 9px;
+            height: 9px;
+            border-radius: 50%;
+            background: #48bb78;
+            box-shadow: 0 0 0 3px rgba(72, 187, 120, 0.35);
+        }
+
         .hero-content h1 {
             font-size: 3.5rem;
             font-weight: 800;
             color: white;
             margin-bottom: 1rem;
             line-height: 1.1;
+            min-height: 2.2em;
         }
 
         .hero-content .tagline {
             font-size: 1.25rem;
-            color: rgba(255, 255, 255, 0.9);
+            color: rgba(255, 255, 255, 0.95);
             margin-bottom: 2rem;
-            font-weight: 300;
+            font-weight: 400;
         }
 
         .hero-content p {
             font-size: 1.1rem;
-            color: rgba(255, 255, 255, 0.8);
+            color: rgba(255, 255, 255, 0.88);
             margin-bottom: 2rem;
             line-height: 1.6;
+            max-width: 34em;
         }
 
         .hero-buttons {
@@ -171,11 +220,14 @@
             border: none;
             border-radius: 50px;
             font-weight: 600;
+            font-family: inherit;
+            font-size: 1rem;
             text-decoration: none;
             transition: all 0.3s ease;
             cursor: pointer;
             display: inline-flex;
             align-items: center;
+            justify-content: center;
             gap: 0.5rem;
         }
 
@@ -212,6 +264,7 @@
         .profile-img {
             width: 350px;
             height: 350px;
+            max-width: 100%;
             border-radius: 50%;
             object-fit: cover;
             border: 6px solid rgba(255, 255, 255, 0.2);
@@ -235,17 +288,22 @@
             font-size: 2rem;
             color: white;
             animation: float 6s ease-in-out infinite;
+            z-index: 3;
         }
 
         .floating-element:nth-child(1) { top: 20%; left: 10%; animation-delay: 0s; }
         .floating-element:nth-child(2) { top: 60%; right: 10%; animation-delay: 2s; }
         .floating-element:nth-child(3) { bottom: 20%; left: 20%; animation-delay: 4s; }
 
-        /* About Section */
+        /* Sections */
         .section {
             padding: 5rem 0;
             background: var(--white);
             position: relative;
+        }
+
+        .section.alt {
+            background: var(--bg-light);
         }
 
         .container {
@@ -276,6 +334,7 @@
             border-radius: 2px;
         }
 
+        /* About */
         #about {
             position: relative;
             overflow: hidden;
@@ -296,7 +355,7 @@
             margin: 0 auto;
             text-align: center;
             padding: 2rem;
-            background: rgba(255, 255, 255, 0.9);
+            background: rgba(255, 255, 255, 0.92);
             border-radius: 15px;
             box-shadow: var(--shadow);
         }
@@ -341,7 +400,7 @@
             margin-top: 0.5rem;
         }
 
-        /* Skills Section */
+        /* Skills */
         .skills-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -391,9 +450,10 @@
             border-color: var(--primary-color);
             background: var(--primary-color);
             color: white;
+            transform: scale(1.05);
         }
 
-        /* Experience Section */
+        /* Experience */
         .timeline {
             position: relative;
             margin-top: 2rem;
@@ -456,10 +516,39 @@
             margin-bottom: 1rem;
         }
 
-        /* Projects Section */
+        .timeline-item p {
+            color: var(--text-light);
+        }
+
+        .timeline-item ul {
+            padding-left: 1.2rem;
+            color: var(--text-light);
+        }
+
+        .timeline-item li {
+            margin-bottom: 0.4rem;
+        }
+
+        .timeline-item li:last-child {
+            margin-bottom: 0;
+        }
+
+        .role-badge {
+            display: inline-block;
+            margin-left: 0.5rem;
+            padding: 0.1rem 0.7rem;
+            border-radius: 12px;
+            background: var(--bg-light);
+            color: var(--primary-color);
+            font-size: 0.75rem;
+            font-weight: 600;
+            vertical-align: middle;
+        }
+
+        /* Projects */
         .projects-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(min(100%, 350px), 1fr));
             gap: 2rem;
             margin-top: 2rem;
         }
@@ -527,11 +616,79 @@
             color: var(--text-dark);
         }
 
-        /* Contact Section */
-        .contact {
-            background: var(--bg-light);
+        /* Education */
+        .education-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-top: 2rem;
         }
 
+        .education-card,
+        .certifications {
+            background: white;
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+        }
+
+        .education-head {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .education-icon {
+            width: 60px;
+            height: 60px;
+            flex-shrink: 0;
+            background: var(--gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+        }
+
+        .education-head h3,
+        .certifications h3 {
+            color: var(--primary-color);
+        }
+
+        .education-head h3 {
+            margin-bottom: 0.25rem;
+        }
+
+        .certifications h3 {
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .muted {
+            color: var(--text-light);
+        }
+
+        .cert-item {
+            padding: 1rem;
+            background: var(--bg-light);
+            border-radius: 10px;
+            margin-bottom: 1rem;
+        }
+
+        .cert-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .cert-item p {
+            color: var(--text-light);
+            margin-top: 0.5rem;
+        }
+
+        /* Contact */
         .contact-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -554,6 +711,7 @@
             border-radius: 15px;
             box-shadow: var(--shadow);
             transition: all 0.3s ease;
+            min-width: 0;
         }
 
         .contact-item:hover {
@@ -561,9 +719,15 @@
             box-shadow: var(--shadow-hover);
         }
 
+        .contact-item p {
+            color: var(--text-light);
+            overflow-wrap: anywhere;
+        }
+
         .contact-icon {
             width: 50px;
             height: 50px;
+            flex-shrink: 0;
             background: var(--gradient);
             border-radius: 50%;
             display: flex;
@@ -598,6 +762,7 @@
             border: 2px solid var(--bg-light);
             border-radius: 10px;
             font-family: inherit;
+            font-size: 1rem;
             transition: all 0.3s ease;
         }
 
@@ -605,7 +770,25 @@
         .form-group textarea:focus {
             outline: none;
             border-color: var(--primary-color);
-            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.15);
+        }
+
+        .btn-submit {
+            width: 100%;
+            background: var(--gradient);
+            color: white;
+        }
+
+        .btn-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .form-status {
+            margin-top: 1rem;
+            font-size: 0.95rem;
+            color: var(--text-light);
+            min-height: 1.4em;
         }
 
         /* Footer */
@@ -641,9 +824,35 @@
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
         }
 
-        /* Responsive Design */
+        /* Responsive */
         @media (max-width: 768px) {
+            .nav-toggle {
+                display: block;
+            }
+
             .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                flex-direction: column;
+                gap: 0;
+                background: rgba(255, 255, 255, 0.98);
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+                padding: 0.5rem 2rem 1rem;
+            }
+
+            .nav-links.open {
+                display: flex;
+            }
+
+            .nav-links a {
+                display: block;
+                padding: 0.75rem 0;
+            }
+
+            .nav-links a::after {
                 display: none;
             }
 
@@ -651,6 +860,11 @@
                 grid-template-columns: 1fr;
                 text-align: center;
                 gap: 2rem;
+            }
+
+            .hero-content p {
+                margin-left: auto;
+                margin-right: auto;
             }
 
             .hero-content h1 {
@@ -664,15 +878,21 @@
 
             .btn {
                 min-width: 200px;
-                text-align: center;
+            }
+
+            .profile-img {
+                width: 260px;
+                height: 260px;
             }
 
             .about-content {
                 padding: 1.5rem;
             }
 
-            .contact-grid {
+            .contact-grid,
+            .education-grid {
                 grid-template-columns: 1fr;
+                gap: 2rem;
             }
 
             .timeline::before {
@@ -681,30 +901,28 @@
 
             .timeline-item {
                 margin-left: 2rem;
+                padding: 1.5rem;
             }
 
             .timeline-item::before {
                 left: -1.5rem;
             }
 
-            .education-grid {
-                grid-template-columns: 1fr !important;
-                gap: 2rem !important;
+            .section-title {
+                font-size: 2rem;
             }
         }
 
-        /* Animations */
-        .fade-in {
+        /* Scroll animations */
+        .animate-on-scroll {
             opacity: 0;
             transform: translateY(30px);
-            animation: fadeIn 0.8s ease forwards;
+            transition: opacity 0.8s ease, transform 0.8s ease;
         }
 
-        @keyframes fadeIn {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        .animate-on-scroll.animated {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         .slide-in-left {
@@ -714,10 +932,7 @@
         }
 
         @keyframes slideInLeft {
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
+            to { opacity: 1; transform: translateX(0); }
         }
 
         .slide-in-right {
@@ -727,21 +942,25 @@
         }
 
         @keyframes slideInRight {
-            to {
-                opacity: 1;
-                transform: translateX(0);
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation: none !important;
+                transition: none !important;
             }
-        }
 
-        .animate-on-scroll {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s ease;
-        }
+            .animate-on-scroll,
+            .slide-in-left,
+            .slide-in-right {
+                opacity: 1;
+                transform: none;
+            }
 
-        .animate-on-scroll.animated {
-            opacity: 1;
-            transform: translateY(0);
+            html {
+                scroll-behavior: auto;
+            }
         }
     </style>
 </head>
@@ -750,12 +969,16 @@
     <nav>
         <div class="nav-container">
             <div class="logo">Mahrukh Bashir</div>
-            <ul class="nav-links">
+            <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-links">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-links" id="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#experience">Experience</a></li>
                 <li><a href="#projects">Projects</a></li>
+                <li><a href="#education">Education</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </div>
@@ -765,38 +988,40 @@
     <section id="home" class="hero">
         <div class="hero-container">
             <div class="hero-content slide-in-left">
-                <h1>Hi, I'm Mahrukh Bashir</h1>
-                <div class="tagline">AI Enthusiast • Software Engineer • Problem Solver</div>
-                <p>Passionate Computer Science student specializing in AI, Web Development, and Database Management. I create innovative solutions that bridge the gap between cutting-edge technology and real-world applications.</p>
+                <div class="availability"><span class="dot"></span> Open to graduate roles</div>
+                <h1 aria-label="Hi, I'm Mahrukh Bashir">Hi, I'm Mahrukh Bashir</h1>
+                <div class="tagline">Computer Science Graduate &bull; AI &amp; Software Engineer</div>
+                <p>Computer Science graduate from Lahore Garrison University, specializing in AI, web development and database systems. I've worked across software engineering, ERP and AI roles, building AI-powered tools, full-stack applications and scalable solutions, and I'm ready to bring that experience to a full-time role.</p>
                 <div class="hero-buttons">
                     <a href="#projects" class="btn btn-primary">
                         <i class="fas fa-rocket"></i> View My Work
                     </a>
                     <a href="#contact" class="btn btn-outline">
-                        <i class="fas fa-envelope"></i> Let's Connect
+                        <i class="fas fa-envelope"></i> Hire Me
                     </a>
                 </div>
             </div>
             <div class="hero-image slide-in-right">
-                <div class="floating-elements">
+                <div class="floating-elements" aria-hidden="true">
                     <div class="floating-element"><i class="fas fa-brain"></i></div>
                     <div class="floating-element"><i class="fas fa-code"></i></div>
                     <div class="floating-element"><i class="fas fa-robot"></i></div>
                 </div>
-                <img src="img.jpeg" alt="Mahrukh Bashir" class="profile-img">
+                <img src="img.jpeg" alt="Portrait of Mahrukh Bashir" class="profile-img" width="350" height="350"
+                     onerror="this.onerror=null;this.src='data:image/svg+xml;utf8,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 350 350%22%3E%3Crect width=%22350%22 height=%22350%22 fill=%22%23764ba2%22/%3E%3Ctext x=%2250%25%22 y=%2255%25%22 font-family=%22Arial%22 font-size=%22110%22 font-weight=%22700%22 fill=%22white%22 text-anchor=%22middle%22 dominant-baseline=%22middle%22%3EMB%3C/text%3E%3C/svg%3E';">
             </div>
         </div>
     </section>
 
     <!-- About Section -->
     <section id="about" class="section">
-        <canvas class="spider-web-canvas"></canvas>
+        <canvas class="spider-web-canvas" aria-hidden="true"></canvas>
         <div class="container">
             <h2 class="section-title animate-on-scroll">About Me</h2>
             <div class="about-content animate-on-scroll">
-                <h3>Passionate About Technology & Innovation</h3>
-                <p>I'm a highly motivated Computer Science student at Lahore Garrison University with a deep passion for artificial intelligence, web development, and solving complex problems. My journey in technology has been driven by curiosity and a desire to create meaningful solutions.</p>
-                <p>With hands-on experience in AI model development, full-stack web applications, and database management, I'm constantly exploring new technologies and pushing the boundaries of what's possible in the digital world.</p>
+                <h3>Computer Science Graduate Building with AI</h3>
+                <p>I'm a Computer Science graduate from Lahore Garrison University with a deep interest in artificial intelligence, web development and solving complex problems. My journey in technology has been driven by curiosity and a desire to build things people actually use.</p>
+                <p>Most recently I worked as a contract Software Engineer at SoftConsults and as a Product Development Intern at Zentallio, after more than a year managing ERP modules at my university and earlier internships in AI and game development. I'm now looking for a graduate role where I can keep learning and contribute from day one.</p>
                 <div class="stats">
                     <div class="stat-item">
                         <span class="stat-number">3.8</span>
@@ -807,8 +1032,8 @@
                         <span class="stat-label">Projects</span>
                     </div>
                     <div class="stat-item">
-                        <span class="stat-number">3</span>
-                        <span class="stat-label">Internships</span>
+                        <span class="stat-number">6</span>
+                        <span class="stat-label">Work Roles</span>
                     </div>
                     <div class="stat-item">
                         <span class="stat-number">5+</span>
@@ -820,9 +1045,9 @@
     </section>
 
     <!-- Skills Section -->
-    <section id="skills" class="section" style="background: var(--bg-light);">
+    <section id="skills" class="section alt">
         <div class="container">
-            <h2 class="section-title animate-on-scroll">Skills & Expertise</h2>
+            <h2 class="section-title animate-on-scroll">Skills &amp; Expertise</h2>
             <div class="skills-grid">
                 <div class="skill-category animate-on-scroll">
                     <h3><i class="fas fa-code"></i> Programming Languages</h3>
@@ -830,6 +1055,7 @@
                         <span class="skill-item">Python</span>
                         <span class="skill-item">C++</span>
                         <span class="skill-item">C</span>
+                        <span class="skill-item">C#</span>
                         <span class="skill-item">JavaScript</span>
                         <span class="skill-item">SQL</span>
                     </div>
@@ -840,12 +1066,18 @@
                         <span class="skill-item">HTML5</span>
                         <span class="skill-item">CSS3</span>
                         <span class="skill-item">JavaScript</span>
+                        <span class="skill-item">React</span>
+                        <span class="skill-item">Next.js</span>
+                        <span class="skill-item">Node.js</span>
+                        <span class="skill-item">Express.js</span>
+                        <span class="skill-item">ASP.NET</span>
+                        <span class="skill-item">Bootstrap</span>
                         <span class="skill-item">Responsive Design</span>
                         <span class="skill-item">Frontend Development</span>
                     </div>
                 </div>
                 <div class="skill-category animate-on-scroll">
-                    <h3><i class="fas fa-brain"></i> AI & Machine Learning</h3>
+                    <h3><i class="fas fa-brain"></i> AI &amp; Machine Learning</h3>
                     <div class="skill-items">
                         <span class="skill-item">AI Model Development</span>
                         <span class="skill-item">Machine Learning</span>
@@ -854,20 +1086,25 @@
                     </div>
                 </div>
                 <div class="skill-category animate-on-scroll">
-                    <h3><i class="fas fa-database"></i> Databases & Tools</h3>
+                    <h3><i class="fas fa-database"></i> Databases &amp; Tools</h3>
                     <div class="skill-items">
                         <span class="skill-item">SQL</span>
                         <span class="skill-item">MS SQL Server</span>
+                        <span class="skill-item">MongoDB</span>
+                        <span class="skill-item">Stored Procedures</span>
                         <span class="skill-item">Database Design</span>
                         <span class="skill-item">Query Optimization</span>
+                        <span class="skill-item">ERPNext</span>
+                        <span class="skill-item">ERP Systems</span>
                     </div>
                 </div>
                 <div class="skill-category animate-on-scroll">
                     <h3><i class="fas fa-users"></i> Soft Skills</h3>
                     <div class="skill-items">
                         <span class="skill-item">Problem Solving</span>
-                        <span class="skill-item">Team Collaboration</span>
+                        <span class="skill-item">Teamwork</span>
                         <span class="skill-item">Communication</span>
+                        <span class="skill-item">Client Dealing</span>
                         <span class="skill-item">Leadership</span>
                         <span class="skill-item">Critical Thinking</span>
                     </div>
@@ -891,192 +1128,202 @@
             <h2 class="section-title animate-on-scroll">Professional Experience</h2>
             <div class="timeline">
                 <div class="timeline-item animate-on-scroll">
+                    <h3>Software Engineer</h3>
+                    <div class="company">SoftConsults, Lahore <span class="role-badge">Contract</span></div>
+                    <div class="date">August 2026 - September 2026</div>
+                    <ul>
+                        <li>Worked with MS SQL Server, writing database queries and stored procedures.</li>
+                        <li>Gained hands-on exposure to database-first development and application data workflows.</li>
+                        <li>Worked within existing software development processes, collaborating with the development team for the contract period.</li>
+                    </ul>
+                </div>
+                <div class="timeline-item animate-on-scroll">
+                    <h3>Product Development Intern</h3>
+                    <div class="company">Zentallio <span class="role-badge">Internship</span></div>
+                    <div class="date">July 2026 - August 2026</div>
+                    <ul>
+                        <li>Supported product development and development-related tasks on ERPNext-based projects across multiple client projects.</li>
+                        <li>Reviewed and documented project requirements, workflows, tickets and feature information for development teams.</li>
+                        <li>Collaborated with team members to understand project requirements, tools and implementation workflows.</li>
+                    </ul>
+                </div>
+                <div class="timeline-item animate-on-scroll">
+                    <h3>ERP Department Intern</h3>
+                    <div class="company">Lahore Garrison University <span class="role-badge">Internship</span></div>
+                    <div class="date">November 2024 - June 2026</div>
+                    <ul>
+                        <li>Managed ERP modules for academic and administrative operations.</li>
+                        <li>Improved student portal functionality and assisted with database integration.</li>
+                    </ul>
+                </div>
+                <div class="timeline-item animate-on-scroll">
                     <h3>Software Engineering Intern</h3>
-                    <div class="company">HeadStarter AI</div>
+                    <div class="company">HeadStarter AI <span class="role-badge">Internship</span></div>
                     <div class="date">September 2024 - October 2024</div>
-                    <p>Developed AI-powered web applications and SaaS platforms, focusing on optimizing AI model performance for efficiency. Collaborated with cross-functional teams to deliver production-ready solutions.</p>
+                    <ul>
+                        <li>Built AI-powered SaaS web applications and optimized model performance for scalability.</li>
+                    </ul>
                 </div>
                 <div class="timeline-item animate-on-scroll">
                     <h3>Gaming Intern</h3>
-                    <div class="company">Mindstorm Studios</div>
+                    <div class="company">Mindstorm Studios <span class="role-badge">Internship</span></div>
                     <div class="date">July 2024 - September 2024</div>
-                    <p>Designed and developed interactive gaming experiences with AI-driven mechanics. Worked closely with designers to implement creative ideas and enhance user engagement through innovative gameplay features.</p>
+                    <ul>
+                        <li>Designed and developed interactive gaming experiences with AI-driven mechanics.</li>
+                        <li>Worked closely with designers to implement creative ideas and enhance user engagement through innovative gameplay features.</li>
+                    </ul>
                 </div>
                 <div class="timeline-item animate-on-scroll">
                     <h3>AI Intern</h3>
-                    <div class="company">KaiRiz Cyber Technologies</div>
+                    <div class="company">KaiRiz Cyber Technologies <span class="role-badge">Internship</span></div>
                     <div class="date">June 2024 - July 2024</div>
-                    <p>Built AI-driven chatbots and machine learning models, focusing on integrating AI capabilities into software solutions. Gained hands-on experience in natural language processing and automated response systems.</p>
+                    <ul>
+                        <li>Developed chatbots and integrated AI models into business workflows.</li>
+                        <li>Gained hands-on experience in natural language processing and automated response systems.</li>
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Projects Section -->
-<section id="projects" class="section" style="background: var(--bg-light);">
-    <div class="container">
-        <h2 class="section-title animate-on-scroll">Featured Projects</h2>
-
-        <div class="projects-grid">
-
-            <!-- Snaccify -->
-            <div class="project-card animate-on-scroll">
-                <div class="project-header">
-                    <h3>Snaccify – Online Food Ordering System</h3>
+    <section id="projects" class="section alt">
+        <div class="container">
+            <h2 class="section-title animate-on-scroll">Featured Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card animate-on-scroll">
+                    <div class="project-header">
+                        <h3>RozgarHub - AI-Powered Employment Solutions</h3>
+                    </div>
+                    <div class="project-content">
+                        <p>Built an employment platform that connects blue-collar workers with employers through intelligent job matching and location-based recommendations. Includes NLP job analysis, a bilingual (Urdu/English) chatbot, GPS job discovery, secure authentication, payments and a rating system.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">NLP</span>
+                            <span class="tech-tag">Bilingual Chatbot</span>
+                            <span class="tech-tag">GPS Discovery</span>
+                            <span class="tech-tag">Secure Auth</span>
+                            <span class="tech-tag">Payments</span>
+                            <span class="tech-tag">Ratings</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="project-content">
-                    <p>
-                        Developed a full-stack online food ordering system that allows users to browse menus, place orders, 
-                        and manage food selections efficiently through a user-friendly interface.
-                    </p>
-                    <div class="project-tech">
-                        <span class="tech-tag">HTML</span>
-                        <span class="tech-tag">CSS</span>
-                        <span class="tech-tag">JavaScript</span>
-                        <span class="tech-tag">Web Development</span>
+
+                <div class="project-card animate-on-scroll">
+                    <div class="project-header">
+                        <h3>Snaccify - Food Delivery Web Application</h3>
+                    </div>
+                    <div class="project-content">
+                        <p>Built a responsive food delivery web application where users browse meals by category, view products and order online. Includes user authentication, product categorization, ordering workflows, wishlists, order tracking and account management, in an interface designed for easy food discovery.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">HTML</span>
+                            <span class="tech-tag">CSS</span>
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">Authentication</span>
+                            <span class="tech-tag">Order Tracking</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card animate-on-scroll">
+                    <div class="project-header">
+                        <h3>AI Resume Analyzer</h3>
+                    </div>
+                    <div class="project-content">
+                        <p>Built an AI-powered resume analysis system that evaluates candidate resumes, extracts key skills and helps screen applicants more efficiently.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">AI/ML</span>
+                            <span class="tech-tag">NLP</span>
+                            <span class="tech-tag">Data Analysis</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card animate-on-scroll">
+                    <div class="project-header">
+                        <h3>AI Rate My Professor</h3>
+                    </div>
+                    <div class="project-content">
+                        <p>Developed an AI-based assistant that provides professor insights based on student feedback, with an interactive and responsive user interface.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Next.js</span>
+                            <span class="tech-tag">AI Integration</span>
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">UI/UX</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card animate-on-scroll">
+                    <div class="project-header">
+                        <h3>AI Chatbot</h3>
+                    </div>
+                    <div class="project-content">
+                        <p>Created an intelligent AI chatbot that handles user queries and generates automated responses to improve user interaction and support workflows.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">AI/ML</span>
+                            <span class="tech-tag">NLP</span>
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Chatbot</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card animate-on-scroll">
+                    <div class="project-header">
+                        <h3>Resume Analyzer</h3>
+                    </div>
+                    <div class="project-content">
+                        <p>Designed a rule-based resume screening tool that scores resumes against predefined criteria such as skills, experience and keywords to support recruitment decisions.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Data Processing</span>
+                            <span class="tech-tag">File Handling</span>
+                        </div>
                     </div>
                 </div>
             </div>
-
-            <!-- AI Resume Analyzer -->
-            <div class="project-card animate-on-scroll">
-                <div class="project-header">
-                    <h3>AI Resume Analyzer</h3>
-                </div>
-                <div class="project-content">
-                    <p>
-                        Built an AI-powered resume analysis system to evaluate candidate resumes, extract key skills, 
-                        and assist in screening applicants more efficiently.
-                    </p>
-                    <div class="project-tech">
-                        <span class="tech-tag">Python</span>
-                        <span class="tech-tag">AI/ML</span>
-                        <span class="tech-tag">NLP</span>
-                        <span class="tech-tag">Data Analysis</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Resume Analyzer (Non-AI / Rule-Based) -->
-            <div class="project-card animate-on-scroll">
-                <div class="project-header">
-                    <h3>Resume Analyzer</h3>
-                </div>
-                <div class="project-content">
-                    <p>
-                        Designed a resume screening tool that analyzes resumes based on predefined criteria such as 
-                        skills, experience, and keywords to support recruitment decision-making.
-                    </p>
-                    <div class="project-tech">
-                        <span class="tech-tag">Python</span>
-                        <span class="tech-tag">Data Processing</span>
-                        <span class="tech-tag">File Handling</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- AI Rate My Professor -->
-            <div class="project-card animate-on-scroll">
-                <div class="project-header">
-                    <h3>AI Rate My Professor</h3>
-                </div>
-                <div class="project-content">
-                    <p>
-                        Developed an AI-based assistant that provides professor insights based on student feedback, 
-                        featuring an interactive and responsive user interface.
-                    </p>
-                    <div class="project-tech">
-                        <span class="tech-tag">Next.js</span>
-                        <span class="tech-tag">AI Integration</span>
-                        <span class="tech-tag">JavaScript</span>
-                        <span class="tech-tag">UI/UX</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- AI Chatbot -->
-            <div class="project-card animate-on-scroll">
-                <div class="project-header">
-                    <h3>AI Chatbot</h3>
-                </div>
-                <div class="project-content">
-                    <p>
-                        Created an intelligent AI chatbot capable of handling user queries and generating automated 
-                        responses to improve user interaction and support workflows.
-                    </p>
-                    <div class="project-tech">
-                        <span class="tech-tag">AI/ML</span>
-                        <span class="tech-tag">NLP</span>
-                        <span class="tech-tag">Python</span>
-                        <span class="tech-tag">Chatbot</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Rozgar Hub (Lovable Project) -->
-            <div class="project-card animate-on-scroll">
-                <div class="project-header">
-                    <h3>Rozgar Hub</h3>
-                </div>
-                <div class="project-content">
-                    <p>
-                        Developed a job-matching platform aimed at bridging the gap between employers and workers by 
-                        streamlining hiring, job discovery, and talent matching processes.
-                    </p>
-                    <div class="project-tech">
-                        <span class="tech-tag">Web Development</span>
-                        <span class="tech-tag">AI Integration</span>
-                        <span class="tech-tag">Database</span>
-                        <span class="tech-tag">Recruitment Tech</span>
-                    </div>
-                </div>
-            </div>
-
         </div>
-    </div>
-</section>
-
+    </section>
 
     <!-- Education & Certifications Section -->
     <section id="education" class="section">
         <div class="container">
-            <h2 class="section-title animate-on-scroll">Education & Certifications</h2>
-            <div class="education-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin-top: 2rem;">
-                <div class="education-card animate-on-scroll" style="background: white; padding: 2rem; border-radius: 20px; box-shadow: var(--shadow);">
-                    <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem;">
-                        <div style="width: 60px; height: 60px; background: var(--gradient); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem;">
+            <h2 class="section-title animate-on-scroll">Education &amp; Certifications</h2>
+            <div class="education-grid">
+                <div class="education-card animate-on-scroll">
+                    <div class="education-head">
+                        <div class="education-icon">
                             <i class="fas fa-graduation-cap"></i>
                         </div>
                         <div>
-                            <h3 style="color: var(--primary-color); margin-bottom: 0.5rem;">Bachelor of Science</h3>
-                            <p style="color: var(--text-light); margin: 0;">Computer Science</p>
+                            <h3>Bachelor of Science</h3>
+                            <p class="muted">Computer Science</p>
                         </div>
                     </div>
                     <p><strong>Lahore Garrison University</strong></p>
-                    <p style="color: var(--text-light);">2022 - Present</p>
-                    <p style="margin-top: 1rem;">Maintaining a GPA of 3.8 with focus on AI, Database Management, and Software Development. Dean's High Achiever List recipient.</p>
+                    <p class="muted">2022 - 2026</p>
+                    <p style="margin-top: 1rem;">Graduated with a GPA of 3.8, with a focus on AI, Database Management and Software Development. Dean's High Achiever List recipient.</p>
                 </div>
-                
-                <div class="certifications animate-on-scroll" style="background: white; padding: 2rem; border-radius: 20px; box-shadow: var(--shadow);">
-                    <h3 style="color: var(--primary-color); margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.5rem;">
-                        <i class="fas fa-certificate"></i> Certifications & Awards
-                    </h3>
+
+                <div class="certifications animate-on-scroll">
+                    <h3><i class="fas fa-certificate"></i> Certifications &amp; Awards</h3>
                     <div>
-                        <div style="padding: 1rem; background: var(--bg-light); border-radius: 10px; margin-bottom: 1rem;">
+                        <div class="cert-item">
                             <h4>Python Fundamentals</h4>
-                            <p style="color: var(--text-light); margin: 0.5rem 0 0 0;">Great Learning Academy</p>
+                            <p>Great Learning Academy</p>
                         </div>
-                        <div style="padding: 1rem; background: var(--bg-light); border-radius: 10px; margin-bottom: 1rem;">
+                        <div class="cert-item">
                             <h4>Dean's High Achiever List</h4>
-                            <p style="color: var(--text-light); margin: 0.5rem 0 0 0;">Lahore Garrison University</p>
+                            <p>Lahore Garrison University</p>
                         </div>
-                        <div style="padding: 1rem; background: var(--bg-light); border-radius: 10px; margin-bottom: 1rem;">
+                        <div class="cert-item">
                             <h4>Game Development Certificate</h4>
-                            <p style="color: var(--text-light); margin: 0.5rem 0 0 0;">Mindstorm Studios</p>
+                            <p>Mindstorm Studios</p>
                         </div>
-                        <div style="padding: 1rem; background: var(--bg-light); border-radius: 10px;">
-                            <h4>AI & Software Development</h4>
-                            <p style="color: var(--text-light); margin: 0.5rem 0 0 0;">KaiRiz Cyber Technologies</p>
+                        <div class="cert-item">
+                            <h4>AI &amp; Software Development</h4>
+                            <p>KaiRiz Cyber Technologies</p>
                         </div>
                     </div>
                 </div>
@@ -1085,52 +1332,44 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="contact section">
+    <section id="contact" class="section alt">
         <div class="container">
-            <h2 class="section-title animate-on-scroll">Let's Connect</h2>
+            <h2 class="section-title animate-on-scroll">Let's Work Together</h2>
             <p style="text-align: center; color: var(--text-light); font-size: 1.1rem; margin-bottom: 3rem;" class="animate-on-scroll">
-                Ready to collaborate on exciting projects or discuss opportunities? I'd love to hear from you!
+                I'm looking for full-time graduate roles in AI, software engineering and web development. If you think I'd be a good fit for your team, I'd love to hear from you.
             </p>
             <div class="contact-grid">
                 <div class="contact-info animate-on-scroll">
                     <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-envelope"></i>
-                        </div>
+                        <div class="contact-icon"><i class="fas fa-envelope"></i></div>
                         <div>
                             <h4>Email</h4>
-                            <p style="color: var(--text-light); margin: 0;">mahrukhbashir03@gmail.com</p>
+                            <p>mahrukhbashir03@gmail.com</p>
                         </div>
                     </div>
                     <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-phone"></i>
-                        </div>
+                        <div class="contact-icon"><i class="fas fa-phone"></i></div>
                         <div>
                             <h4>Phone</h4>
-                            <p style="color: var(--text-light); margin: 0;">+92 3211009059</p>
+                            <p>+92 3211009059</p>
                         </div>
                     </div>
                     <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fab fa-linkedin"></i>
-                        </div>
+                        <div class="contact-icon"><i class="fab fa-linkedin"></i></div>
                         <div>
                             <h4>LinkedIn</h4>
-                            <p style="color: var(--text-light); margin: 0;">linkedin.com/in/mahrukh-bashir-186009286</p>
+                            <p>linkedin.com/in/mahrukh-bashir-186009286</p>
                         </div>
                     </div>
                     <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-map-marker-alt"></i>
-                        </div>
+                        <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
                         <div>
                             <h4>Location</h4>
-                            <p style="color: var(--text-light); margin: 0;">Lahore, Punjab, Pakistan</p>
+                            <p>Lahore, Punjab, Pakistan</p>
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="contact-form animate-on-scroll">
                     <h3 style="margin-bottom: 1.5rem; color: var(--primary-color);">Send me a message</h3>
                     <form>
@@ -1150,9 +1389,10 @@
                             <label for="message">Your Message</label>
                             <textarea id="message" name="message" rows="5" required></textarea>
                         </div>
-                        <button type="submit" class="btn btn-primary" style="width: 100%;">
+                        <button type="submit" class="btn btn-submit">
                             <i class="fas fa-paper-plane"></i> Send Message
                         </button>
+                        <p class="form-status" role="status" aria-live="polite"></p>
                     </form>
                 </div>
             </div>
@@ -1163,222 +1403,189 @@
     <footer>
         <div class="container">
             <div class="social-links">
-                <a href="https://linkedin.com/in/mahrukh-bashir-186009286" class="social-link" target="_blank">
+                <a href="https://linkedin.com/in/mahrukh-bashir-186009286" class="social-link" target="_blank" rel="noopener" aria-label="LinkedIn">
                     <i class="fab fa-linkedin"></i>
                 </a>
-                <a href="https://github.com/mahrukhbashir" class="social-link" target="_blank">
+                <a href="https://github.com/mahrukhbashir" class="social-link" target="_blank" rel="noopener" aria-label="GitHub">
                     <i class="fab fa-github"></i>
                 </a>
-                <a href="mailto:mahrukhbashir03@gmail.com" class="social-link">
+                <a href="mailto:mahrukhbashir03@gmail.com" class="social-link" aria-label="Email">
                     <i class="fas fa-envelope"></i>
                 </a>
-                <a href="tel:+923211009059" class="social-link">
+                <a href="tel:+923211009059" class="social-link" aria-label="Phone">
                     <i class="fas fa-phone"></i>
                 </a>
             </div>
-            <p>&copy; 2025 Mahrukh Bashir. All rights reserved. Crafted with passion and innovation.</p>
+            <p>&copy; 2026 Mahrukh Bashir. All rights reserved.</p>
         </div>
     </footer>
 
     <script>
+        const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+        // Mobile menu
+        const navToggle = document.querySelector('.nav-toggle');
+        const navLinksEl = document.querySelector('.nav-links');
+        navToggle.addEventListener('click', () => {
+            const open = navLinksEl.classList.toggle('open');
+            navToggle.setAttribute('aria-expanded', open);
+            navToggle.querySelector('i').className = open ? 'fas fa-times' : 'fas fa-bars';
+        });
+
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
-                e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
+                    e.preventDefault();
+                    target.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'start' });
                 }
+                navLinksEl.classList.remove('open');
+                navToggle.setAttribute('aria-expanded', 'false');
+                navToggle.querySelector('i').className = 'fas fa-bars';
             });
         });
 
-        // Animate on scroll functionality
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver(function(entries) {
+        // Animate on scroll
+        const observer = new IntersectionObserver(entries => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('animated');
+                    observer.unobserve(entry.target);
                 }
             });
-        }, observerOptions);
+        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
 
-        document.querySelectorAll('.animate-on-scroll').forEach(el => {
-            observer.observe(el);
-        });
+        document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
 
-        // Add active navigation highlighting
-        window.addEventListener('scroll', function() {
-            const sections = document.querySelectorAll('section[id]');
-            const navLinks = document.querySelectorAll('.nav-links a');
-            
+        // Active navigation highlighting
+        const sections = document.querySelectorAll('section[id]');
+        const navAnchors = document.querySelectorAll('.nav-links a');
+        function updateActiveNav() {
             let current = '';
             sections.forEach(section => {
-                const sectionTop = section.offsetTop - 120;
-                if (window.pageYOffset >= sectionTop) {
-                    current = section.getAttribute('id');
+                if (window.scrollY >= section.offsetTop - 140) {
+                    current = section.id;
                 }
             });
-
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href').substring(1) === current) {
-                    link.classList.add('active');
-                }
+            navAnchors.forEach(link => {
+                link.classList.toggle('active', link.getAttribute('href') === '#' + current);
             });
-        });
+        }
+        window.addEventListener('scroll', updateActiveNav, { passive: true });
+        updateActiveNav();
 
-        // Form submission
-        document.querySelector('.contact-form form').addEventListener('submit', function(e) {
+        // Contact form: opens the visitor's email client
+        document.querySelector('.contact-form form').addEventListener('submit', function (e) {
             e.preventDefault();
-            const formData = new FormData(this);
-            const name = formData.get('name');
-            const email = formData.get('email');
-            const subject = formData.get('subject');
-            const message = formData.get('message');
-            const mailtoLink = `mailto:mahrukhbashir03@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`From: ${name} (${email})\n\nMessage:\n${message}`)}`;
-            window.location.href = mailtoLink;
-            alert('Thank you for your message! Your email client should open now.');
+            const data = new FormData(this);
+            const body = `From: ${data.get('name')} (${data.get('email')})\n\n${data.get('message')}`;
+            window.location.href = `mailto:mahrukhbashir03@gmail.com?subject=${encodeURIComponent(data.get('subject'))}&body=${encodeURIComponent(body)}`;
+            this.querySelector('.form-status').textContent = 'Opening your email app. If nothing happens, email me directly at mahrukhbashir03@gmail.com.';
             this.reset();
         });
 
-        // Typing animation for hero text
-        function typeWriter(element, text, speed = 50) {
-            let i = 0;
-            element.innerHTML = '';
-            function type() {
-                if (i < text.length) {
-                    element.innerHTML += text.charAt(i);
-                    i++;
-                    setTimeout(type, speed);
-                }
-            }
-            type();
-        }
-
-        window.addEventListener('load', function() {
+        // Typing animation for hero heading (skipped for reduced motion)
+        window.addEventListener('load', function () {
             const heroTitle = document.querySelector('.hero-content h1');
-            if (heroTitle) {
-                const originalText = heroTitle.textContent;
-                typeWriter(heroTitle, originalText, 100);
-            }
-        });
-
-        // Parallax effect for hero section
-        window.addEventListener('scroll', function() {
-            const scrolled = window.pageYOffset;
-            const heroSection = document.querySelector('.hero');
-            if (heroSection) {
-                heroSection.style.transform = `translateY(${scrolled * 0.5}px)`;
-            }
-        });
-
-        // Hover effects for skill items
-        document.querySelectorAll('.skill-item').forEach(item => {
-            item.addEventListener('mouseenter', function() {
-                this.style.transform = 'scale(1.05)';
-            });
-            item.addEventListener('mouseleave', function() {
-                this.style.transform = 'scale(1)';
-            });
+            if (!heroTitle || reduceMotion) return;
+            const text = heroTitle.textContent;
+            let i = 0;
+            heroTitle.textContent = '';
+            (function type() {
+                if (i < text.length) {
+                    heroTitle.textContent += text.charAt(i++);
+                    setTimeout(type, 70);
+                }
+            })();
         });
 
         // Spider web animation
         const canvas = document.querySelector('.spider-web-canvas');
-        if (canvas) {
+        if (canvas && !reduceMotion) {
             const ctx = canvas.getContext('2d');
-            let width, height, mouseX = 0, mouseY = 0;
+            const numRadials = 8;
+            const numRings = 4;
+            let width, height, centerX, centerY, nodes = [];
+            let mouseX = null, mouseY = null;
 
-            function resizeCanvas() {
+            function buildWeb() {
                 width = canvas.parentElement.clientWidth;
                 height = canvas.parentElement.clientHeight;
                 canvas.width = width;
                 canvas.height = height;
-            }
-
-            resizeCanvas();
-            window.addEventListener('resize', resizeCanvas);
-
-            const nodes = [];
-            const numRadials = 8;
-            const numRings = 4;
-            const centerX = width / 2;
-            const centerY = height / 2;
-            const maxRadius = Math.min(width, height) / 2 - 20;
-
-            // Create nodes for radial lines and rings
-            for (let r = 0; r <= numRings; r++) {
-                const radius = (r / numRings) * maxRadius;
-                for (let i = 0; i < numRadials; i++) {
-                    const angle = (i / numRadials) * 2 * Math.PI;
-                    const x = centerX + radius * Math.cos(angle);
-                    const y = centerY + radius * Math.sin(angle);
-                    nodes.push({ x, y, baseX: x, baseY: y });
+                centerX = width / 2;
+                centerY = height / 2;
+                const maxRadius = Math.min(width, height) / 2 - 20;
+                nodes = [];
+                for (let r = 0; r <= numRings; r++) {
+                    const radius = (r / numRings) * maxRadius;
+                    for (let i = 0; i < numRadials; i++) {
+                        const angle = (i / numRadials) * 2 * Math.PI;
+                        const x = centerX + radius * Math.cos(angle);
+                        const y = centerY + radius * Math.sin(angle);
+                        nodes.push({ x, y, baseX: x, baseY: y });
+                    }
                 }
             }
 
-            // Mouse interaction
-            canvas.addEventListener('mousemove', (e) => {
+            buildWeb();
+            window.addEventListener('resize', buildWeb);
+
+            canvas.addEventListener('mousemove', e => {
                 const rect = canvas.getBoundingClientRect();
                 mouseX = e.clientX - rect.left;
                 mouseY = e.clientY - rect.top;
             });
+            canvas.addEventListener('mouseleave', () => { mouseX = null; mouseY = null; });
 
-            canvas.addEventListener('mouseleave', () => {
-                mouseX = null;
-                mouseY = null;
+            // The content card sits above the canvas, so listen on the section too
+            canvas.parentElement.addEventListener('mousemove', e => {
+                const rect = canvas.getBoundingClientRect();
+                mouseX = e.clientX - rect.left;
+                mouseY = e.clientY - rect.top;
             });
+            canvas.parentElement.addEventListener('mouseleave', () => { mouseX = null; mouseY = null; });
 
             function animate() {
                 ctx.clearRect(0, 0, width, height);
                 ctx.strokeStyle = 'rgba(102, 126, 234, 0.7)';
                 ctx.lineWidth = 1;
 
-                // Update node positions based on mouse
                 nodes.forEach(node => {
-                    if (mouseX !== null && mouseY !== null) {
+                    if (mouseX !== null) {
                         const dx = mouseX - node.x;
                         const dy = mouseY - node.y;
                         const distance = Math.sqrt(dx * dx + dy * dy);
                         const maxDistance = 100;
-                        if (distance < maxDistance) {
+                        if (distance > 0 && distance < maxDistance) {
                             const force = (1 - distance / maxDistance) * 10;
                             node.x -= dx * force / distance;
                             node.y -= dy * force / distance;
                         }
                     }
-                    // Return to base position
                     node.x += (node.baseX - node.x) * 0.1;
                     node.y += (node.baseY - node.y) * 0.1;
                 });
 
-                // Draw radial lines
                 for (let i = 0; i < numRadials; i++) {
                     ctx.beginPath();
                     ctx.moveTo(centerX, centerY);
                     for (let r = 0; r <= numRings; r++) {
-                        const index = r * numRadials + i;
-                        ctx.lineTo(nodes[index].x, nodes[index].y);
+                        const n = nodes[r * numRadials + i];
+                        ctx.lineTo(n.x, n.y);
                     }
                     ctx.stroke();
                 }
 
-                // Draw rings
                 for (let r = 1; r <= numRings; r++) {
                     ctx.beginPath();
                     for (let i = 0; i < numRadials; i++) {
-                        const index = r * numRadials + i;
-                        const nextIndex = r * numRadials + ((i + 1) % numRadials);
-                        ctx.moveTo(nodes[index].x, nodes[index].y);
-                        ctx.lineTo(nodes[nextIndex].x, nodes[nextIndex].y);
+                        const a = nodes[r * numRadials + i];
+                        const b = nodes[r * numRadials + ((i + 1) % numRadials)];
+                        ctx.moveTo(a.x, a.y);
+                        ctx.lineTo(b.x, b.y);
                     }
-                    ctx.closePath();
                     ctx.stroke();
                 }
 
@@ -1389,7 +1596,4 @@
         }
     </script>
 </body>
-
 </html>
-
-
